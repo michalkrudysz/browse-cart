@@ -1,12 +1,91 @@
 .main-product {
-  background-color: #0a1126;
-  overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
   height: auto;
   margin-top: 1em;
+  padding-top: 8em;
+  padding-bottom: 15em;
+  overflow: hidden;
+  background-color: #0a1126;
 
-  .product {
-    height: 80vh;
+  .left-section {
+    width: 50%;
+    padding-left: 15em;
+    padding-right: 5em;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .introducing-product {
+        font-size: 1.5em;
+        font-weight: normal; // Assuming default
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+
+      .product-name {
+        margin-top: 0.5em;
+        font-size: 3.5em;
+        font-weight: 900;
+        text-align: center;
+      }
+
+      .product-description {
+        margin-top: 1.5em;
+        font-size: 1.1em;
+        font-weight: 200;
+        text-align: center;
+        letter-spacing: 0.05em;
+      }
+
+      .product-price {
+        margin-top: 1em;
+        font-size: 1.4em;
+        font-weight: 900;
+      }
+
+      .button-container {
+        margin-top: 1.6em;
+
+        .button {
+          padding-top: 0.8em;
+          padding-bottom: 0.8em;
+          border: none;
+          border-radius: 5px;
+          background-color: #2abfb0;
+          transition: background-color 0.4s;
+
+          &:hover {
+            background-color: #dbf22e;
+            border-radius: 5px; // Already defined, can be omitted unless specific override is needed
+          }
+        }
+      }
+    }
+  }
+
+  .right-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 12em;
+
+    .product-image {
+      img {
+        width: 450px;
+        height: 430px;
+        border: 7px solid #e2f26b;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: drop-shadow(0px 11px 10px #f2f2f2);
+      }
+    }
   }
 
   &::after {
