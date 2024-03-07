@@ -1,9 +1,10 @@
 import classes from "./Shop.module.scss";
+import MainProduct from "./MainProduct";
 
 export default function Shop() {
   return (
     <div className={classes.shop}>
-      <h1>Sklep</h1>
+      <MainProduct />
     </div>
   );
 }
