@@ -1,3 +1,5 @@
+@import "./NunitoSans";
+
 html,
 body,
 div,
@@ -103,7 +105,15 @@ section {
 
 body {
   line-height: 1;
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "NunitoSans", sans-serif;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f2f2f2;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
 ol,
@@ -132,22 +142,6 @@ table {
 a {
   text-decoration: none;
   color: inherit;
-}
-
-body {
-  font-family: "Inter", sans-serif;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-a {
   font-weight: 500;
   color: #646cff;
 }
