@@ -1,0 +1,14 @@
+.shop-layout {
+  height: auto;
+
+  .products-container {
+    padding-left: 14.5em;
+    padding-right: 14.5em;
+
+    .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}

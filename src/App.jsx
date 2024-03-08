@@ -7,6 +7,7 @@ function App() {
     <>
       <Header />
       <Shop />
+      <footer className="footer">&copy; Michał Krudysz 2024</footer>
     </>
   );
 }

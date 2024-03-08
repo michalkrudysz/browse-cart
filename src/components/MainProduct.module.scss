@@ -11,36 +11,75 @@
   overflow: hidden;
   background-color: #0a1126;
 
+  &::before {
+    content: "Nasze produkty";
+    position: absolute;
+    z-index: 3;
+    top: auto;
+    right: auto;
+    bottom: 70px;
+    left: 50%;
+    width: 15%;
+    height: 0;
+    padding-top: 0.8em;
+    border-top: 6px solid #2abfb0;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    font-weight: 700;
+    text-align: center;
+    color: #0a1126;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 250px;
+    background-color: #f2f2f2;
+    clip-path: ellipse(100% 50% at 50% 100%);
+  }
+
   .left-section {
     width: 50%;
-    padding-left: 15em;
-    padding-right: 5em;
+    padding-left: 17em;
+    padding-right: 6em;
 
     .content {
       display: flex;
       flex-direction: column;
       align-items: center;
+      color: white;
+
+      .introducing-product,
+      .product-name,
+      .product-description,
+      .product-price {
+        font-weight: normal;
+        text-align: center;
+      }
 
       .introducing-product {
+        margin-top: 0;
         font-size: 1.5em;
-        font-weight: normal; // Assuming default
-        text-align: center;
         letter-spacing: 0.05em;
       }
 
       .product-name {
         margin-top: 0.5em;
-        font-size: 3.5em;
+        font-size: 3.3em;
         font-weight: 900;
-        text-align: center;
       }
 
       .product-description {
         margin-top: 1.5em;
         font-size: 1.1em;
+        padding-left: 3em;
+        padding-right: 3em;
         font-weight: 200;
-        text-align: center;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.07em;
       }
 
       .product-price {
@@ -62,7 +101,7 @@
 
           &:hover {
             background-color: #dbf22e;
-            border-radius: 5px; // Already defined, can be omitted unless specific override is needed
+            border-radius: 5px;
           }
         }
       }
@@ -70,10 +109,10 @@
   }
 
   .right-section {
-    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 50%;
     padding-right: 12em;
 
     .product-image {
@@ -86,16 +125,5 @@
         filter: drop-shadow(0px 11px 10px #f2f2f2);
       }
     }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 250px;
-    background-color: #f2f2f2;
-    clip-path: ellipse(100% 50% at 50% 100%);
   }
 }
