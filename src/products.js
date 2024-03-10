@@ -1,9 +1,9 @@
-import flashDrive from "./assets/flash-drive.png";
-import tShirt from "./assets/t-shirt.png";
-import caseImage from "./assets/case.png";
-import gardenHydroponics from "./assets/garden-hydroponics.png";
-import cable from "./assets/cable.png";
-import umbrella from "./assets/umbrella.png";
+import flashDrive from "./assets/products/flash-drive.png";
+import tShirt from "./assets/products/t-shirt.png";
+import caseImage from "./assets/products/case.png";
+import gardenHydroponics from "./assets/products/garden-hydroponics.png";
+import cable from "./assets/products/cable.png";
+import umbrella from "./assets/products/umbrella.png";
 
 export const PRODUCTS = [
   {

@@ -1,6 +1,7 @@
 import classes from "./Shop.module.scss";
 import MainProduct from "./MainProduct";
 import SingleProduct from "./SingleProduct";
+import { PRODUCTS } from "../products.js";
 
 export default function Shop() {
   return (
@@ -8,12 +9,9 @@ export default function Shop() {
       <MainProduct />
       <div className={classes["products-container"]}>
         <div className={classes["products-grid"]}>
-          <SingleProduct />
-          <SingleProduct />
-          <SingleProduct />
-          <SingleProduct />
-          <SingleProduct />
-          <SingleProduct />
+          {PRODUCTS.map((product) => (
+            <SingleProduct key={product.id} product={product} />
+          ))}
         </div>
       </div>
     </div>
