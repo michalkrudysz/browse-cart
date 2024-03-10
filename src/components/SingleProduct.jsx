@@ -19,7 +19,6 @@ export default function Product() {
         temperatur od 0 °C do 60 °C.
       </div>
       <div className={classes["product-price"]}>Cena: 100zł</div>
-
       <button className={classes.button}>Dodaj do koszyka</button>
     </div>
   );
