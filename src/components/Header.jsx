@@ -3,7 +3,7 @@ import classes from "./Header.module.scss";
 import logo from "../../public/logo.png";
 import shoppingCart from "../assets/add-to-basket.png";
 
-export default function Header() {
+export default function Header({ cartItemCount }) {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
@@ -16,7 +16,7 @@ export default function Header() {
           className={classes["cart-icon"]}
         />
         <div className={classes["cart-text"]}>Twój koszyk</div>
-        <div className={classes["cart-amount"]}>0</div>
+        <div className={classes["cart-amount"]}>{cartItemCount}</div>
       </div>
     </header>
   );

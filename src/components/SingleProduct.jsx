@@ -1,19 +1,19 @@
 import classes from "./SingleProduct.module.scss";
 
-export default function Product({ product }) {
+export default function Product({ product, addItem }) {
+  const { id, image, title, description, price } = product;
+
   return (
     <div className={classes.product}>
       <div className={classes["product-image"]}>
-        <img src={product.image} alt={product.title} />
+        <img src={image} alt={title} />
       </div>
-      <div className={classes["product-title"]}>{product.title}</div>
-      <div className={classes["product-description"]}>
-        {product.description}
-      </div>
-      <div
-        className={classes["product-price"]}
-      >{`Cena: ${product.price}zł`}</div>
-      <button className={classes.button}>Dodaj do koszyka</button>
+      <div className={classes["product-title"]}>{title}</div>
+      <div className={classes["product-description"]}>{description}</div>
+      <div className={classes["product-price"]}>Cena: {price}zł</div>
+      <button onClick={() => addItem(id)} className={classes.button}>
+        Dodaj do koszyka
+      </button>
     </div>
   );
 }
