@@ -1,26 +1,36 @@
+import dialogPolyfill from "dialog-polyfill";
+import "dialog-polyfill/dialog-polyfill.css";
+import { forwardRef, useRef, useImperativeHandle, useEffect } from "react";
 import classes from "./CartModal.module.scss";
-import { forwardRef, useImperativeHandle, useRef } from "react";
 
 const CartModal = forwardRef((props, ref) => {
-  const modalRef = useRef(null);
+  const dialog = useRef(null);
 
   useImperativeHandle(ref, () => ({
-    openModal: () => {
-      modalRef.current.style.display = "block";
+    open: () => {
+      dialog.current.showModal();
     },
-    closeModal: () => {
-      modalRef.current.style.display = "none";
+    close: () => {
+      dialog.current.close();
     },
   }));
 
+  useEffect(() => {
+    if (dialog.current) {
+      dialogPolyfill.registerDialog(dialog.current);
+    }
+  }, []);
+
   return (
-    <div ref={modalRef} className={classes.modal}>
-      <div className={classes["modal-content"]}>
-        <h2>Your Cart</h2>
-        <button onClick={() => ref.current.closeModal()}>Close</button>
+    <dialog ref={dialog} className={classes["cart-modal"]}>
+      <div className={classes["cart-modal-content"]}>
+        <h2>Twój koszyk</h2>
+        <button onClick={() => dialog.current.close()}>Zamknij</button>
       </div>
-    </div>
+    </dialog>
   );
 });
+
+CartModal.displayName = "CartModal";
 
 export default CartModal;

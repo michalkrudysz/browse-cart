@@ -1,7 +1,6 @@
 import "./App.scss";
 import Header from "./components/Header";
 import Shop from "./components/Shop";
-import CartModal from "./components/CartModal";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -23,7 +22,6 @@ function App() {
 
   return (
     <>
-      <CartModal />
       <Header cartItemCount={itemCount} />
       <Shop addItem={addItem} />
       <footer className="footer">&copy; Michał Krudysz 2024</footer>
