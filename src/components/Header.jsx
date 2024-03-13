@@ -1,4 +1,3 @@
-import React from "react";
 import classes from "./Header.module.scss";
 import logo from "../../public/logo.png";
 import shoppingCart from "../assets/add-to-basket.png";
