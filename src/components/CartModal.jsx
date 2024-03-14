@@ -1,14 +1,15 @@
+import React from "react";
 import ReactDOM from "react-dom";
 import classes from "./CartModal.module.scss";
 
-const CartModal = () => {
+export default function CartModal() {
   return ReactDOM.createPortal(
-    <div className={classes["cart-modal"]}>
+    <dialog className={classes["cart-modal"]}>
       <div className={classes["cart-modal-content"]}>
         <h2>Twój koszyk</h2>
         <button>Zamknij</button>
       </div>
-    </div>,
-    document.getElementById("modal")
+    </dialog>,
+    document.getElementById("cart")
   );
-};
+}
