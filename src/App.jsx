@@ -5,20 +5,17 @@ import { useState } from "react";
 import { useEffect } from "react";
 
 function App() {
-  const [cartItemCount, setCartItemCount] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
-  function addItem(id) {
-    if (cartItemCount.find((item) => item.id === id)) {
-      return;
-    } else {
-      setCartItemCount((prevItems) => [...prevItems, { id: id }]);
-    }
+  function addItem(product) {
+    console.log(product);
   }
-  useEffect(() => {
-    console.log(cartItemCount);
-  }, [cartItemCount]);
 
-  let itemCount = cartItemCount.length;
+  // useEffect(() => {
+  //   console.log(cartItemCount);
+  // }, [cartItemCount]);
+
+  let itemCount = 5;
 
   return (
     <>

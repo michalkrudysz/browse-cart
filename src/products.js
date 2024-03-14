@@ -4,6 +4,7 @@ import caseImage from "./assets/products/case.png";
 import gardenHydroponics from "./assets/products/garden-hydroponics.png";
 import cable from "./assets/products/cable.png";
 import umbrella from "./assets/products/umbrella.png";
+import wirelessCharger from "./assets/products/wireless-charger.png";
 
 export const PRODUCTS = [
   {
@@ -47,5 +48,18 @@ export const PRODUCTS = [
     title: `Parasol z latarką LED`,
     price: 30,
     description: `Innowacyjny parasol z wbudowaną latarką LED zapewniającą widoczność i bezpieczeństwo w ciemności. Wytrzymały i wodoodporny materiał, automatyczne otwieranie, idealny na deszczowe i wietrzne dni.`,
+  },
+  {
+    id: "p7",
+    image: wirelessCharger,
+    title: `Bezprzewodowa Stacja Ładowania 3 w 1`,
+    price: 120,
+    description: `Poznaj multifunkcyjność w eleganckim wydaniu. Z naszą stacją
+    ładowania nie tylko zasilisz swoje urządzenia, ale zyskasz także
+    praktyczną lampkę nocną z dotykową kontrolą i trzema stopniami
+    jasności. Bezpieczeństwo, wygoda i nowoczesny design idą w parze,
+    zapewniając optymalne warunki do ładowania telefonu, zegarka i
+    słuchawek. To więcej niż ładowarka – to innowacyjne rozwiązanie dla
+    Ciebie`,
   },
 ];

@@ -11,7 +11,7 @@ export default function Product({ product, addItem }) {
       <div className={classes["product-title"]}>{title}</div>
       <div className={classes["product-description"]}>{description}</div>
       <div className={classes["product-price"]}>Cena: {price}zł</div>
-      <button onClick={() => addItem(id)} className={classes.button}>
+      <button onClick={() => addItem(product)} className={classes.button}>
         Dodaj do koszyka
       </button>
     </div>
