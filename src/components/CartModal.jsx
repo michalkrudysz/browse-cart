@@ -1,5 +1,6 @@
 import { forwardRef, useImperativeHandle, useState } from "react";
 import ReactDOM from "react-dom";
+import Cart from "./Cart";
 import classes from "./CartModal.module.scss";
 
 function CartModalComponent(props, ref) {
@@ -23,10 +24,15 @@ function CartModalComponent(props, ref) {
   }
 
   return ReactDOM.createPortal(
-    <div className={classes["cart-modal"]}>
-      <div className={classes["cart-modal-content"]}>
-        <h2>Twój koszyk</h2>
-        <button onClick={closeModal}>Zamknij</button>
+    <div className={classes["backdrop"]}>
+      <div className={classes["cart-modal"]}>
+        <div className={classes["cart-modal-content"]}>
+          <h2>Twój koszyk</h2>
+          <Cart />
+          <button onClick={closeModal} className={classes["close-button"]}>
+            Zamknij
+          </button>
+        </div>
       </div>
     </div>,
     document.getElementById("cart")
