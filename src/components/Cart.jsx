@@ -7,19 +7,31 @@ export default function Cart({}) {
         <li>
           <div className={classes["cart-item"]}>
             <div className={classes["product-name"]}>Nazwa</div>
-            <div className={classes["product-quantity"]}>Nazwa</div>
+            <div className={classes["add-remove"]}>
+              <button className={classes["add-button"]}>+</button>
+              <button className={classes["remove-button"]}>-</button>
+            </div>
+            <div className={classes["product-quantity"]}>2</div>
           </div>
         </li>
         <li>
           <div className={classes["cart-item"]}>
             <div className={classes["product-name"]}>Nazwa</div>
-            <div className={classes["product-quantity"]}>Nazwa</div>
+            <div className={classes["add-remove"]}>
+              <button className={classes["add-button"]}>+</button>
+              <button className={classes["remove-button"]}>-</button>
+            </div>
+            <div className={classes["product-quantity"]}>2</div>
           </div>
         </li>
         <li>
           <div className={classes["cart-item"]}>
             <div className={classes["product-name"]}>Nazwa</div>
-            <div className={classes["product-quantity"]}>Nazwa</div>
+            <div className={classes["add-remove"]}>
+              <button className={classes["add-button"]}>+</button>
+              <button className={classes["remove-button"]}>-</button>
+            </div>
+            <div className={classes["product-quantity"]}>2</div>
           </div>
         </li>
       </div>
