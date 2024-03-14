@@ -2,33 +2,19 @@ import classes from "./Header.module.scss";
 import logo from "../../public/logo.png";
 import shoppingCart from "../assets/add-to-basket.png";
 import CartModal from "./CartModal";
-import { useState } from "react";
+import { useRef } from "react";
 
 export default function Header({ cartItemCount }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  function toogleCartModal(value) {
-    if (value === false) {
-      setIsOpen(false);
-    } else setIsOpen(true);
-  }
-
-  function renderCartModal() {
-    if (isOpen) {
-      return <CartModal close={toogleCartModal} />;
-    } else {
-      return null;
-    }
-  }
+  const modalRef = useRef();
 
   return (
     <>
-      {renderCartModal()}
+      <CartModal ref={modalRef} />
       <header className={classes.header}>
         <div className={classes.logo}>
           <img src={logo} alt="Logo" />
         </div>
-        <div onClick={() => toogleCartModal(true)} className={classes.cart}>
+        <div onClick={() => modalRef.current.open()} className={classes.cart}>
           <img
             src={shoppingCart}
             alt="Ikona koszyka sklepowego"
