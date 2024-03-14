@@ -8,14 +8,40 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
 
   function addItem(product) {
-    console.log(product);
+    const existingProduct = cartItems.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+      const updatedItems = cartItems.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        } else {
+          return item;
+        }
+      });
+
+      // Aktualizujemy stan cartItems nową tablicą produktów.
+      setCartItems(updatedItems);
+    } else {
+      // Jeśli produkt nie istnieje w koszyku, dodajemy go jako nowy element.
+      // Ustawiamy jego ilość na 1, ponieważ jest to pierwsze dodanie do koszyka.
+      const newItem = {
+        ...product, // Kopiujemy wszystkie właściwości produktu.
+        quantity: 1, // Ustawiamy quantity na 1.
+      };
+
+      // Aktualizujemy stan cartItems, dodając nowy produkt do istniejącej tablicy.
+      setCartItems([...cartItems, newItem]);
+    }
   }
 
-  // useEffect(() => {
-  //   console.log(cartItemCount);
-  // }, [cartItemCount]);
+  useEffect(() => {
+    console.log(cartItems);
+  }, [cartItems]);
 
-  let itemCount = 5;
+  let itemCount = cartItems.length;
 
   return (
     <>
