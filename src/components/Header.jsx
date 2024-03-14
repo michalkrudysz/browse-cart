@@ -1,10 +1,12 @@
 import classes from "./Header.module.scss";
 import logo from "../../public/logo.png";
 import shoppingCart from "../assets/add-to-basket.png";
+import CartModal from "./CartModal";
 
 export default function Header({ cartItemCount }) {
   return (
     <>
+      <CartModal />
       <header className={classes.header}>
         <div className={classes.logo}>
           <img src={logo} alt="Logo" />
