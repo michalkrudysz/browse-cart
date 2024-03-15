@@ -1,11 +1,14 @@
 import classes from "./Cart.module.scss";
 
-export default function Cart({ cart, removeOne }) {
-  const total = cart.reduce((totalValue, currentItem) => {
-    totalValue = totalValue + currentItem.price * currentItem.quantity;
-    return totalValue;
-  }, 0);
-
+export default function Cart({ cart, removeOne, addOne }) {
+  const total = parseFloat(
+    cart
+      .reduce((totalValue, currentItem) => {
+        totalValue = totalValue + currentItem.price * currentItem.quantity;
+        return totalValue;
+      }, 0)
+      .toFixed(2)
+  );
   return (
     <div className={classes.cart}>
       <div className={classes["cart-items"]}>
@@ -15,7 +18,12 @@ export default function Cart({ cart, removeOne }) {
               <div className={classes["cart-item"]}>
                 <div className={classes["product-name"]}>{item.title}</div>
                 <div className={classes["add-remove"]}>
-                  <button className={classes["add-button"]}>+</button>
+                  <button
+                    className={classes["add-button"]}
+                    onClick={() => addOne(item.id)}
+                  >
+                    +
+                  </button>
                   <button
                     className={classes["remove-button"]}
                     onClick={() => removeOne(item.id)}

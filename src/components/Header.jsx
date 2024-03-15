@@ -4,14 +4,19 @@ import shoppingCart from "../assets/add-to-basket.png";
 import CartModal from "./CartModal";
 import { useRef } from "react";
 
-export default function Header({ cartItemsInfo, remove }) {
+export default function Header({ cartItemsInfo, remove, add }) {
   const modalRef = useRef();
 
   const cartQuantity = cartItemsInfo.length === 0 ? 0 : cartItemsInfo.length;
 
   return (
     <>
-      <CartModal cart={cartItemsInfo} remove={remove} ref={modalRef} />
+      <CartModal
+        cart={cartItemsInfo}
+        add={add}
+        remove={remove}
+        ref={modalRef}
+      />
       <header className={classes.header}>
         <div className={classes.logo}>
           <img src={logo} alt="Logo" />

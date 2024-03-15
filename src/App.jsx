@@ -55,10 +55,24 @@ function App() {
       }
     });
   }
+  function add(id) {
+    setCartItems((currentItems) => {
+      return currentItems.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        } else {
+          return item;
+        }
+      });
+    });
+  }
 
   return (
     <>
-      <Header cartItemsInfo={cartItems} remove={remove} />
+      <Header cartItemsInfo={cartItems} remove={remove} add={add} />
       <Shop addItem={addItem} />
       <footer className="footer">&copy; Michał Krudysz 2024</footer>
     </>
