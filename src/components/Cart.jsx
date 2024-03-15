@@ -1,7 +1,10 @@
 import classes from "./Cart.module.scss";
 
 export default function Cart({ cart }) {
-  console.log(cart);
+  const total = cart.reduce((totalValue, currentItem) => {
+    totalValue = totalValue + currentItem.price * currentItem.quantity;
+    return totalValue;
+  }, 0);
 
   return (
     <div className={classes.cart}>
@@ -18,7 +21,7 @@ export default function Cart({ cart }) {
                 <div className={classes["product-quantity"]}>
                   {item.quantity}
                 </div>
-                <div className={classes["product-price"]}>{item.price}zł</div>
+                <div className={classes["product-price"]}>{item.price} zł</div>
               </div>
             </li>
           ))
@@ -26,7 +29,9 @@ export default function Cart({ cart }) {
           <div className={classes.error}>Karta zakupów jest pusta</div>
         )}
       </div>
-      <div className={classes["cart-total"]}>Suma: zł</div>
+      {cart.length > 0 ? (
+        <div className={classes["cart-total"]}>Suma: {total} zł</div>
+      ) : null}
     </div>
   );
 }
