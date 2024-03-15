@@ -22,30 +22,24 @@ function App() {
         }
       });
 
-      // Aktualizujemy stan cartItems nową tablicą produktów.
       setCartItems(updatedItems);
     } else {
-      // Jeśli produkt nie istnieje w koszyku, dodajemy go jako nowy element.
-      // Ustawiamy jego ilość na 1, ponieważ jest to pierwsze dodanie do koszyka.
       const newItem = {
-        ...product, // Kopiujemy wszystkie właściwości produktu.
-        quantity: 1, // Ustawiamy quantity na 1.
+        ...product,
+        quantity: 1,
       };
 
-      // Aktualizujemy stan cartItems, dodając nowy produkt do istniejącej tablicy.
       setCartItems([...cartItems, newItem]);
     }
   }
 
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
-
-  let itemCount = cartItems.length;
+  // useEffect(() => {
+  //   console.log(cartItems);
+  // }, [cartItems]);
 
   return (
     <>
-      <Header cartItemCount={itemCount} />
+      <Header cartItemsInfo={cartItems} />
       <Shop addItem={addItem} />
       <footer className="footer">&copy; Michał Krudysz 2024</footer>
     </>

@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import Cart from "./Cart";
 import classes from "./CartModal.module.scss";
 
-function CartModalComponent(props, ref) {
+function CartModalComponent({ cart }, ref) {
   const [isOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -28,7 +28,7 @@ function CartModalComponent(props, ref) {
       <div className={classes["cart-modal"]}>
         <div className={classes["cart-modal-content"]}>
           <h2>Twój koszyk</h2>
-          <Cart />
+          <Cart cart={cart} />
           <button onClick={closeModal} className={classes["close-button"]}>
             Zamknij
           </button>

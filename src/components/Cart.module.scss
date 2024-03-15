@@ -1,5 +1,12 @@
 .cart {
   .cart-items {
+    .error {
+      margin-top: 2em;
+      margin-bottom: 2em;
+      font-weight: 800;
+      text-align: center;
+    }
+
     li {
       all: unset;
       position: relative;
@@ -7,8 +14,8 @@
 
       .cart-item {
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: space-between;
         padding-top: 0.5em;
         padding-bottom: 0.5em;
 
@@ -19,8 +26,8 @@
         }
 
         .product-quantity {
-          font-weight: 600;
           margin-right: 0.5em;
+          font-weight: 600;
         }
 
         .add-remove {
@@ -49,8 +56,8 @@
   .cart-total {
     display: flex;
     justify-content: flex-end;
-    font-weight: 700;
     margin-top: 1em;
     margin-right: 0.5em;
+    font-weight: 700;
   }
 }
