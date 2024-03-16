@@ -1,6 +1,10 @@
 import classes from "./Cart.module.scss";
+import { useContext } from "react";
+import { CartContext } from "../store/shopping-cart-context";
 
-export default function Cart({ cart, removeOne, addOne }) {
+export default function Cart() {
+  const { cart, removeOne, addOne } = useContext(CartContext);
+
   const total = parseFloat(
     cart
       .reduce((totalValue, currentItem) => {
@@ -9,6 +13,7 @@ export default function Cart({ cart, removeOne, addOne }) {
       }, 0)
       .toFixed(2)
   );
+
   return (
     <div className={classes.cart}>
       <div className={classes["cart-items"]}>

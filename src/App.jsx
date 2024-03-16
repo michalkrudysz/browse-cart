@@ -5,7 +5,7 @@ import SingleProduct from "./components/SingleProduct";
 import MainProduct from "./components/MainProduct";
 import { PRODUCTS } from "./products";
 import { useState } from "react";
-import { CartContex } from "./store/shopping-cart-context";
+import { CartContext } from "./store/shopping-cart-context";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -78,7 +78,7 @@ function App() {
   });
 
   return (
-    <CartContext.Provider>
+    <CartContext.Provider value={[]}>
       <Header cartItemsInfo={cartItems} remove={remove} add={add} />
       <Shop
         mainProduct={<MainProduct addItem={addItem} data={mainProduct} />}
