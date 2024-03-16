@@ -1,22 +1,19 @@
+import React, { useRef, useContext } from "react";
 import classes from "./Header.module.scss";
 import logo from "../../public/logo.png";
 import shoppingCart from "../assets/add-to-basket.png";
 import CartModal from "./CartModal";
-import { useRef } from "react";
+import { CartContext } from "../store/shopping-cart-context";
 
-export default function Header({ cartItemsInfo, remove, add }) {
+export default function Header() {
   const modalRef = useRef();
+  const { cart } = useContext(CartContext);
 
-  const cartQuantity = cartItemsInfo.length === 0 ? 0 : cartItemsInfo.length;
+  const cartQuantity = cart.length;
 
   return (
     <>
-      <CartModal
-        cart={cartItemsInfo}
-        add={add}
-        remove={remove}
-        ref={modalRef}
-      />
+      <CartModal ref={modalRef} />
       <header className={classes.header}>
         <div className={classes.logo}>
           <img src={logo} alt="Logo" />
