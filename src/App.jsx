@@ -77,8 +77,14 @@ function App() {
     return product.id === "p7";
   });
 
+  const ctxValue = {
+    cart: cartItems,
+    removeItem: remove,
+    addItem: add,
+  };
+
   return (
-    <CartContext.Provider value={[]}>
+    <CartContext.Provider value={ctxValue}>
       <Header cartItemsInfo={cartItems} remove={remove} add={add} />
       <Shop
         mainProduct={<MainProduct addItem={addItem} data={mainProduct} />}

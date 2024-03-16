@@ -1,7 +1,10 @@
 import classes from "./SingleProduct.module.scss";
+import { useContext } from "react";
+import { CartContext } from "../store/shopping-cart-context";
 
-export default function Product({ product, addItem }) {
-  const { id, image, title, description, price } = product;
+export default function Product({ product }) {
+  const { addItem } = useContext(CartContext);
+  const { image, title, description, price } = product;
 
   return (
     <div className={classes.product}>
