@@ -81,9 +81,15 @@ function App() {
       <Header cartItemsInfo={cartItems} remove={remove} add={add} />
       <Shop
         mainProduct={<MainProduct addItem={addItem} data={mainProduct} />}
-        products={PRODUCTS.map((product) => (
-          <SingleProduct key={product.id} product={product} addItem={addItem} />
-        ))}
+        products={PRODUCTS.filter((product) => product.id !== "p7").map(
+          (product) => (
+            <SingleProduct
+              key={product.id}
+              product={product}
+              addItem={addItem}
+            />
+          )
+        )}
       />
       <footer className="footer">&copy; Michał Krudysz 2024</footer>
     </>
