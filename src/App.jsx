@@ -1,8 +1,10 @@
 import "./App.scss";
 import Header from "./components/Header";
 import Shop from "./components/Shop";
+import SingleProduct from "./components/SingleProduct";
+import MainProduct from "./components/MainProduct";
+import { PRODUCTS } from "./products";
 import { useState } from "react";
-import { useEffect } from "react";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -70,10 +72,19 @@ function App() {
     });
   }
 
+  const mainProduct = PRODUCTS.find((product) => {
+    return product.id === "p7";
+  });
+
   return (
     <>
       <Header cartItemsInfo={cartItems} remove={remove} add={add} />
-      <Shop addItem={addItem} />
+      <Shop
+        mainProduct={<MainProduct addItem={addItem} data={mainProduct} />}
+        products={PRODUCTS.map((product) => (
+          <SingleProduct key={product.id} product={product} addItem={addItem} />
+        ))}
+      />
       <footer className="footer">&copy; Michał Krudysz 2024</footer>
     </>
   );
