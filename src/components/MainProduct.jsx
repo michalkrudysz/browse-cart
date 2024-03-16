@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import classes from "./MainProduct.module.scss";
+import { CartContext } from "../store/shopping-cart-context";
 
-export default function MainProduct({ data, addItem }) {
+export default function MainProduct({ data }) {
   const { image, title, description, price } = data;
+  const { addItem } = useContext(CartContext);
 
   return (
     <div className={classes["main-product"]}>
@@ -23,7 +26,7 @@ export default function MainProduct({ data, addItem }) {
       </div>
       <div className={classes["right-section"]}>
         <div className={classes["product-image"]}>
-          <img src={image} alt="3 in 1 Wireless Charger" />
+          <img src={image} alt={title} />
         </div>
       </div>
     </div>
