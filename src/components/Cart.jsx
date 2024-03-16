@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../store/shopping-cart-context";
 
 export default function Cart() {
-  const { cart, removeOne, addOne } = useContext(CartContext);
+  const { cart, remove, add } = useContext(CartContext);
 
   const total = parseFloat(
     cart
@@ -25,13 +25,13 @@ export default function Cart() {
                 <div className={classes["add-remove"]}>
                   <button
                     className={classes["add-button"]}
-                    onClick={() => addOne(item.id)}
+                    onClick={() => add(item.id)}
                   >
                     +
                   </button>
                   <button
                     className={classes["remove-button"]}
-                    onClick={() => removeOne(item.id)}
+                    onClick={() => remove(item.id)}
                   >
                     -
                   </button>

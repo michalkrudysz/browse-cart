@@ -79,8 +79,9 @@ function App() {
 
   const ctxValue = {
     cart: cartItems,
-    removeItem: remove,
-    addItem: add,
+    addItem: addItem,
+    remove: remove,
+    add: add,
   };
 
   return (
