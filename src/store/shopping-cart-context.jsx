@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { useState } from "react";
+import { useState, useReducer } from "react";
 
 export const CartContext = createContext({
   cart: [],
@@ -8,7 +8,16 @@ export const CartContext = createContext({
   remove: () => {},
 });
 
+function shoppingCartReducer(state, action) {
+  return state;
+}
+
 export default function CartProvider({ children }) {
+  const [shoppingCartState, shoppingCartDispatch] = useReducer(
+    shoppingCartReducer,
+    []
+  );
+
   const [cartItems, setCartItems] = useState([]);
 
   function addItem(product) {
@@ -74,7 +83,7 @@ export default function CartProvider({ children }) {
     });
   }
   const ctxValue = {
-    cart: cartItems,
+    cart: shoppingCartState,
     addItem: addItem,
     remove: remove,
     add: add,
