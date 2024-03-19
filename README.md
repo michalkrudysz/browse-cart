@@ -2,7 +2,7 @@
 
 ## Brief Description
 
-An online store application built using React. It renders products from a "fake" database, simulated using a JS file containing an array of objects representing individual products. The application allows adding products to the cart (which displays the quantity based on the array length to show unique quantities). Through the cart (which is a modal created using portals), you can add or remove products (increase their quantity or decrease it; automatically removing them when decreasing from 1 to 0). The cart also displays the total price for the products, considering their quantity and price (rounded to two decimal places).The application is not responsive. It was created for the purpose of learning concepts in React.
+An online store application built using React. It renders products from a "fake" database, simulated using a JS file containing an array of objects representing individual products. The application allows adding products to the cart (which displays the quantity based on the array length to show unique quantities). Through the cart (which is a modal created using portals), you can add or remove products (increase their quantity or decrease it; automatically removing them when decreasing from 1 to 0). The cart also displays the total price for the products, considering their quantity and price (rounded to two decimal places). The application is not responsive. It was created for the purpose of learning concepts in React.
 
 ## Technologies
 
