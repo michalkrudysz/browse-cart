@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import classes from "./Shop.module.scss";
 
 export default function Shop({ mainProduct, products }) {
@@ -10,3 +11,8 @@ export default function Shop({ mainProduct, products }) {
     </div>
   );
 }
+
+Shop.propTypes = {
+  mainProduct: PropTypes.node.isRequired,
+  products: PropTypes.arrayOf(PropTypes.node).isRequired,
+};

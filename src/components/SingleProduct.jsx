@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import classes from "./SingleProduct.module.scss";
 import { useContext } from "react";
 import { CartContext } from "../store/shopping-cart-context";
@@ -20,3 +21,12 @@ export default function Product({ product }) {
     </div>
   );
 }
+
+Product.propTypes = {
+  product: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
+};
