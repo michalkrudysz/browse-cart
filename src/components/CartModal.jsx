@@ -2,6 +2,7 @@ import { forwardRef, useImperativeHandle, useState } from "react";
 import ReactDOM from "react-dom";
 import Cart from "./Cart";
 import classes from "./CartModal.module.scss";
+import PropTypes from "prop-types";
 
 function CartModalComponent({ cart, remove, add }, ref) {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +39,12 @@ function CartModalComponent({ cart, remove, add }, ref) {
     document.getElementById("cart")
   );
 }
+
+CartModalComponent.propTypes = {
+  cart: PropTypes.array.isRequired,
+  remove: PropTypes.func.isRequired,
+  add: PropTypes.func.isRequired,
+};
 
 const CartModal = forwardRef(CartModalComponent);
 
